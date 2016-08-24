@@ -54,8 +54,8 @@ namespace SeleniumTests
         public void SetupTest()
         {
             //driver = new ChromeDriver();
-            //driver = new FirefoxDriver();
-            driver = new InternetExplorerDriver();
+            driver = new FirefoxDriver();
+            //driver = new InternetExplorerDriver();
             baseURL = "http://clic-ftest-app1:81/";
             verificationErrors = new StringBuilder();
             rnd = r.Next(1, 100);
@@ -119,13 +119,22 @@ namespace SeleniumTests
             driver.FindElement(By.Id("loginId")).Clear();
             driver.FindElement(By.Id("loginId")).SendKeys("100003"); Thread.Sleep(1000);
             driver.FindElement(By.Id("login")).Click(); Thread.Sleep(1000);
-            driver.FindElement(By.Id("submit")).Click(); Thread.Sleep(1000);
+            try
+            {
+                driver.FindElement(By.Id("submit")).Click(); Thread.Sleep(1000);
+            }
+            catch { }
             driver.Navigate().GoToUrl(newurl); Thread.Sleep(1000);
             driver.FindElement(By.Id("actionButton_Save")).Click(); Thread.Sleep(1000);
             driver.FindElement(By.Id("actionButton_Authorize")).Click(); Thread.Sleep(1000);
             driver.FindElement(By.Id("actionButton_Authorize")).Click(); Thread.Sleep(1000);
+            driver.FindElement(By.Id("actionButton_fakeExecute")).Click(); Thread.Sleep(1000);
+            driver.FindElement(By.Id("actionButton_Authorize")).Click(); Thread.Sleep(1000);
+            driver.FindElement(By.Id("actionButton_fakeExecute")).Click(); Thread.Sleep(1000);
             driver.FindElement(By.Id("actionButton_Send")).Click(); Thread.Sleep(1000);
+            driver.FindElement(By.Id("actionButton_fakeExecute")).Click(); Thread.Sleep(1000);
             driver.FindElement(By.Id("actionButton_Send")).Click(); Thread.Sleep(1000);
+            driver.FindElement(By.Id("actionButton_fakeExecute")).Click(); Thread.Sleep(1000);
 
 
         }
