@@ -93,7 +93,7 @@ namespace SeleniumTests
 
             }
             driver.FindElement(By.Id("Input_Code")).SendKeys(testname);
-            new SelectElement(driver.FindElement(By.Id("Input_AddressId"))).SelectByText("ap-dominik.kocka@egroup.hu"); Thread.Sleep(1000);
+            new SelectElement(driver.FindElement(By.Id("Input_AddressId"))).SelectByText("ClicAutoMailTest@egroup.hu"); Thread.Sleep(1000);
             new SelectElement(driver.FindElement(By.Id("Input_MessageTopicId"))).SelectByText("automatictest"); Thread.Sleep(1000);
             new SelectElement(driver.FindElement(By.Id("SelectedFieldUid"))).SelectByText("Text display"); Thread.Sleep(1000);
             driver.FindElement(By.Id("newFormField")).Click(); Thread.Sleep(1000);
@@ -135,8 +135,6 @@ namespace SeleniumTests
             driver.FindElement(By.Id("actionButton_fakeExecute")).Click(); Thread.Sleep(1000);
             driver.FindElement(By.Id("actionButton_Send")).Click(); Thread.Sleep(1000);
             driver.FindElement(By.Id("actionButton_fakeExecute")).Click(); Thread.Sleep(1000);
-
-
         }
         private bool IsElementPresent(By by)
         {
